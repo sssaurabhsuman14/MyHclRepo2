@@ -40,16 +40,7 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public List<AccountModel> getAll() {
-		AccountModel model = new AccountModel();
-		Optional<List<Account>> entityOptional = accountRepository.findById(id);
-		if(entityOptional.isPresent()) {
-			List<Account> entityList = entityOptional.get();
-			if(!entityList.isEmpty()) {
-				
-			}
-			BeanUtils.copyProperties(entity, model);
-		}
-		return model;
+		return null;
 	}
 
 	@Override

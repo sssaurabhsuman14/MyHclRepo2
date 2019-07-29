@@ -2,8 +2,10 @@ package com.bank.application.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import com.bank.application.entity.Customer;
+import com.bank.application.entity.Transaction;
 
 public class AccountModel implements Serializable {
 
@@ -15,8 +17,28 @@ public class AccountModel implements Serializable {
 	private Date createdDate;
 
 	private String createdBy;
+	
+	private String accountType;
 
 	private Customer customer;
+	
+	private List<Transaction> transactions;
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
 
 	public Long getAccountId() {
 		return accountId;

@@ -7,9 +7,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bank.application.entity.Account;
 import com.bank.application.entity.Customer;
-import com.bank.application.model.AccountModel;
 import com.bank.application.model.CustomerModel;
 import com.bank.application.repository.CustomerRepository;
 import com.bank.application.service.CustomerService;

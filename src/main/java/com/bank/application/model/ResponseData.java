@@ -9,6 +9,12 @@ public class ResponseData {
 	private String message;
 	private Object object;
 
+	
+	
+	public ResponseData() {
+		super();
+	}
+
 	public ResponseData(String status, String message, Object object) {
 		super();
 		this.status = status;

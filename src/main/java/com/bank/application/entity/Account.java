@@ -1,13 +1,18 @@
 package com.bank.application.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Account implements Serializable {
@@ -23,9 +28,15 @@ public class Account implements Serializable {
 	private Date createdDate;
 
 	private String createdBy;
+	
+	private String accountType;
 
-	@ManyToOne
-	private Customer customer;
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn
+	Customer customer ;
+	
+	@OneToMany(mappedBy = "account")
+	private List<Transaction> transactions = new ArrayList<Transaction>();
 
 	public Long getAccountId() {
 		return accountId;
@@ -35,9 +46,26 @@ public class Account implements Serializable {
 		this.accountId = accountId;
 	}
 
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
+
 	public Double getBalance() {
 		return balance;
 	}
+
 
 	public void setBalance(Double balance) {
 		this.balance = balance;
